@@ -1,0 +1,3 @@
+/home/killerof/Projects/StdExamples/C++20/build-Concepts-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/killerof/Projects/StdExamples/C++20/build-Concepts-Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/killerof/Projects/StdExamples/C++20/build-Concepts-Desktop-Debug/CMakeFiles/Concepts.dir

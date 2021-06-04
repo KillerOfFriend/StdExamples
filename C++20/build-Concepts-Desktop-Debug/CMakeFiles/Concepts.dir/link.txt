@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/Concepts.dir/src/Tests/serializecontainerstests.cpp.o CMakeFiles/Concepts.dir/src/Tests/serializenumberstests.cpp.o CMakeFiles/Concepts.dir/src/Tests/serializestringstests.cpp.o CMakeFiles/Concepts.dir/src/Tests/serializetests.cpp.o CMakeFiles/Concepts.dir/src/main.cpp.o -o Concepts 
