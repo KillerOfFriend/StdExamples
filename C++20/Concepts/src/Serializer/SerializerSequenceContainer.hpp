@@ -11,7 +11,7 @@
  *
  * Поддерживается std::list, std::vector, std::deque
  */
-template<typename T> requires SequenceStdContainer<T>
+template<SequenceStdContainer T>
 class Serializer<T>
 {
 public:
@@ -23,7 +23,7 @@ public:
     static std::size_t deserialize(std::istream& inIStream, T& outData);
 };
 //-----------------------------------------------------------------------------
-template<typename T> requires SequenceStdContainer<T>
+template<SequenceStdContainer T>
 std::size_t Serializer<T>::serialize(std::ostream &inOStream, const T& inData)
 {
     const auto pos = inOStream.tellp();
@@ -40,7 +40,7 @@ std::size_t Serializer<T>::serialize(std::ostream &inOStream, const T& inData)
     return inOStream.tellp() - pos;
 };
 //-----------------------------------------------------------------------------
-template<typename T> requires SequenceStdContainer<T>
+template<SequenceStdContainer T>
 std::size_t Serializer<T>::deserialize(std::istream& inIStream, T& outData)
 {
     using value_t = typename T::value_type;

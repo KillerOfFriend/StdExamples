@@ -9,7 +9,7 @@
  * @brief The Serializer class - Сериализатор стандартной пары
  * @tparam T - Сопостовляемый тип
  */
-template<typename T> requires StdPair<T>
+template<StdPair T>
 class Serializer<T>
 {
 public:
@@ -21,7 +21,7 @@ public:
     static std::size_t deserialize(std::istream& inIStream, T& outData);
 };
 //-----------------------------------------------------------------------------
-template<typename T> requires StdPair<T>
+template<StdPair T>
 std::size_t Serializer<T>::serialize(std::ostream &inOStream, const T& inData)
 {
     const auto pos = inOStream.tellp();
@@ -32,7 +32,7 @@ std::size_t Serializer<T>::serialize(std::ostream &inOStream, const T& inData)
     return inOStream.tellp() - pos;;
 };
 //-----------------------------------------------------------------------------
-template<typename T> requires StdPair<T>
+template<StdPair T>
 std::size_t Serializer<T>::deserialize(std::istream& inIStream, T& outData)
 {
     const auto pos = inIStream.tellg();

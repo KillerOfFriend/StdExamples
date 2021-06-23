@@ -34,7 +34,7 @@ struct PairTypeConvert<T>
  * Поддерживается std::set, std::unordered_set, std::multiset, std::map,
  * std::unordered_map, std::multimap
  */
-template<typename T> requires AssociativeStdContainer<T>
+template<AssociativeStdContainer T>
 class Serializer<T>
 {
 public:
@@ -46,7 +46,7 @@ public:
     static std::size_t deserialize(std::istream& inIStream, T& outData);
 };
 //-----------------------------------------------------------------------------
-template<typename T> requires AssociativeStdContainer<T>
+template<AssociativeStdContainer T>
 std::size_t Serializer<T>::serialize(std::ostream &inOStream, const T& inData)
 {
     const auto pos = inOStream.tellp();
@@ -63,7 +63,7 @@ std::size_t Serializer<T>::serialize(std::ostream &inOStream, const T& inData)
     return inOStream.tellp() - pos;
 };
 //-----------------------------------------------------------------------------
-template<typename T> requires AssociativeStdContainer<T>
+template<AssociativeStdContainer T>
 std::size_t Serializer<T>::deserialize(std::istream& inIStream, T& outData)
 {
     using value_t = typename PairTypeConvert<typename T::value_type>::type;

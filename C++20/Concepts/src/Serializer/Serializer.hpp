@@ -4,7 +4,7 @@
 #include "SerializerBase.hpp"
 #include "SerializerSerializeble.hpp"
 #include "SerializerString.hpp"
-#include "SerializerPair.h"
+#include "SerializerPair.hpp"
 #include "SerializerContainer.hpp"
 
 #endif // SERIALIZER_H

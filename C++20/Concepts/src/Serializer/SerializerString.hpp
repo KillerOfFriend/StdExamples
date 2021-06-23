@@ -11,7 +11,7 @@
  * @brief The Serializer class - Сериализатор стандартных строк
  * @tparam T - Сопостовляемый тип
  */
-template<typename T> requires StdString<T>
+template<StdString T>
 class Serializer<T>
 {
 public:
@@ -23,7 +23,7 @@ public:
     static std::size_t deserialize(std::istream& inIStream, T& outData);
 };
 //-----------------------------------------------------------------------------
-template<typename T> requires StdString<T>
+template<StdString T>
 std::size_t Serializer<T>::serialize(std::ostream &inOStream, const T& inData)
 {
     const auto pos = inOStream.tellp();
@@ -37,7 +37,7 @@ std::size_t Serializer<T>::serialize(std::ostream &inOStream, const T& inData)
     return inOStream.tellp() - pos;
 };
 //-----------------------------------------------------------------------------
-template<typename T> requires StdString<T>
+template<StdString T>
 std::size_t Serializer<T>::deserialize(std::istream& inIStream, T& outData)
 {
     const auto pos = inIStream.tellg();

@@ -29,7 +29,7 @@ template <template <class...> class Template, class... Args>
 struct is_specialization<Template<Args...>, Template> : std::true_type {};
 //-----------------------------------------------------------------------------
 /**
- * @brief StdString - Концепт наследника от ISerializeble
+ * @brief SerializebleHeir - Концепт наследника от ISerializeble
  * @tparam T - Сопоставляемый тип
  */
 template<typename T>
@@ -92,7 +92,7 @@ concept AssociativeStdContainer = StdContainer<ContainerType> && requires (Conta
 };
 //-----------------------------------------------------------------------------
 /**
- * @brief StdString - Концепт стандартной пары
+ * @brief PairType - Концепт стандартной пары
  * @tparam PairType - Сопоставляемый тип
  */
 template<typename PairType>
